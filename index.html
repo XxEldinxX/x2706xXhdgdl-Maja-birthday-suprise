@@ -138,6 +138,30 @@ button:hover{
     z-index:2;
 }
 
+.dots{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:-10px;
+    margin-bottom:30px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#d8d8d8;
+
+    transition:all 0.4s ease;
+}
+
+.dot.active{
+    background:#ff7fa5;
+    transform:scale(1.2);
+}
+
 .hero{
     text-align:center;
     margin:40px 0;
@@ -339,6 +363,15 @@ button:hover{
 
         </div>
         
+        <div class="dots">
+
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+        
         <div class="hero">
             <h1>Happy Birthday Maja ❤️</h1>
 
@@ -446,11 +479,12 @@ function checkAnswer() {
     let currentSlide = 0;
 
     const slides = document.querySelectorAll(".slide");
-    
+    const dots = document.querySelectorAll(".dot");
     setInterval(() => {
     
         slides[currentSlide].classList.remove("active");
-    
+        dots[currentSlide].classList.remove("active");
+        
         currentSlide++;
     
         if(currentSlide >= slides.length){
@@ -458,6 +492,7 @@ function checkAnswer() {
         }
     
         slides[currentSlide].classList.add("active");
+        dots[currentSlide].classList.add("active");
     
     }, 4000);
 }
