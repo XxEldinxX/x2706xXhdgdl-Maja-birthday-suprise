@@ -162,6 +162,20 @@ button:hover{
     transform:scale(1.2);
 }
 
+.video-button{
+
+    margin-top:10px;
+
+}
+
+.hidden-video{
+
+    display:none;
+
+    margin-top:16px;
+
+}
+    
 .hero{
     text-align:center;
     margin:40px 0;
@@ -180,7 +194,7 @@ button:hover{
     font-size:1.5rem;
 }
 
-.video-card{
+-card{
     background:white;
     border-radius:22px;
     padding:20px;
@@ -190,24 +204,24 @@ button:hover{
     opacity: 0;
     transition: all 0.3s ease;
 }
-.video-card:hover{
+-card:hover{
 
     transform: translateY(-5px);
 
 }
 
-.video-card h2{
+-card h2{
     font-size:1.1rem;
     margin-bottom:8px;
 }
 
-.video-card p{
+-card p{
     color:#666;
     margin-bottom:14px;
     line-height:1.5;
 }
     
-.video-card iframe{
+-card iframe{
 
     width:100%;
     border:none;
@@ -218,7 +232,7 @@ button:hover{
 
 }
     
-.video-link{
+-link{
     display:inline-block;
     text-decoration:none;
     background:#ff7fa5;
@@ -403,16 +417,28 @@ button:hover{
             <h2>🎂 Geburtstagsnachricht</h2>
             <p>Die erste Nachricht für deinen besonderen Tag.</p>
           
-            <iframe
-                width="100%"
-                height="315"
-                src="https://www.youtube.com/embed/pxn0wL_uSm4"
-                title="Geburtstagsnachricht"
-                frameborder="0"
-                allowfullscreen>
-            </iframe>
+        <button
+            class="video-button"
+            onclick="toggleVideo('video1')">
+    
+            Nachricht öffnen ❤️
 
-        </div>
+        </button>
+
+        <div id="video1" class="hidden-video">
+
+        <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/pxn0wL_uSm4"
+            title="Geburtstagsnachricht"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
 
         <div class="video-card" style="animation-delay:0.2s">
             <h2>✨ Was ich an dir schätze</h2>
@@ -515,6 +541,23 @@ function checkAnswer() {
     
     }, 4000);
 }
+
+function toggleVideo(id){
+
+    const video = document.getElementById(id);
+
+    if(video.style.display === "block"){
+
+        video.style.display = "none";
+
+    } else {
+
+        video.style.display = "block";
+
+    }
+
+}
+    
 </script>
 
 </body>
