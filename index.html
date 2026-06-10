@@ -158,13 +158,89 @@ button:hover{
         opacity: 1;
         transform: translateY(0);
     }
-
 }  
+.hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-50px;
+    font-size:22px;
+    opacity:0.15;
+    animation:floatHeart linear infinite;
+}
+
+.hearts span:nth-child(1){
+    left:10%;
+    animation-duration:14s;
+}
+
+.hearts span:nth-child(2){
+    left:25%;
+    animation-duration:18s;
+}
+
+.hearts span:nth-child(3){
+    left:40%;
+    animation-duration:15s;
+}
+
+.hearts span:nth-child(4){
+    left:60%;
+    animation-duration:20s;
+}
+
+.hearts span:nth-child(5){
+    left:75%;
+    animation-duration:16s;
+}
+
+.hearts span:nth-child(6){
+    left:90%;
+    animation-duration:22s;
+}
+
+@keyframes floatHeart{
+
+    from{
+        transform:translateY(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:0.15;
+    }
+
+    80%{
+        opacity:0.15;
+    }
+
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+
+}
+    
 </style>
 </head>
 
 <body>
 
+<div class="hearts">
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+</div>
+    
 <div id="login" class="screen">
 
     <div class="card">
