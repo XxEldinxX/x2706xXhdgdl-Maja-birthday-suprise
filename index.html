@@ -123,6 +123,7 @@ button:hover{
     
     opacity:1;
     z-index:1;
+    animation: slowZoom 7s linear forwards;
     transition:opacity 1.5s ease;
 
     background:white;
@@ -272,6 +273,18 @@ button:hover{
     to{
         transform:translateY(-120vh);
         opacity:0;
+    }
+
+}
+
+@keyframes slowZoom {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
     }
 
 }
